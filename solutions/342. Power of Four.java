@@ -13,6 +13,15 @@ class Solution {
         
         
         // solution 3 0(1)
-        return num > 0 && ((num & (num - 1)) == 0) && (num - 1) % 3 == 0;
+        // return num > 0 && ((num & (num - 1)) == 0) && (num - 1) % 3 == 0;
+        
+        // solution 4 o(1)
+         int alternatingOddBitMask = 0x55555555; // 1010101010101010101010101010101
+​
+    boolean isNonZero = (num != 0);
+    boolean hasSingleLeadingOneBit = (num & (num - 1)) == 0;
+    boolean hasOnlyOddPositionedBits = (num & alternatingOddBitMask) == num;
+​
+    return isNonZero && hasSingleLeadingOneBit && hasOnlyOddPositionedBits;
     }
 }
