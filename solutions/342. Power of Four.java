@@ -11,6 +11,7 @@ class Solution {
         // solution 2 O(1)
         // return (Math.log(num) / Math.log(4)) % 1 == 0;
         
+        
         // solution 3 0(1)
         return num > 0 && ((num & (num - 1)) == 0) && (num - 1) % 3 == 0;
     }
