@@ -11,10 +11,12 @@ class Solution {
                     !seen.add(curr + " in box " + r/3 + "-" + c/3)
                 ){
                     return false;
-                }
+                }
                 }
             }   
         }
+        
         return true;
+        
     }
 }
