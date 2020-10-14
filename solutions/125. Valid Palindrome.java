@@ -11,6 +11,7 @@ class Solution {
         System.out.println(str);
         System.out.println(reversed);
 ​
+        
         return str.toLowerCase().equals(reversed.toLowerCase());
     }
 }
