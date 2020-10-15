@@ -1,27 +1,44 @@
 class Solution {
-    public boolean isPowerOfFour(int num) {
-        // solution 1 O(Log n)
-        // if(num == 0) return false;
-        // while(num != 1){
-        //     if(num % 4 != 0) return false;
-        //     num /= 4;
-        // }
-        // return true;
-        
-        // solution 2 O(1)
-        // return (Math.log(num) / Math.log(4)) % 1 == 0;
-        
-        
-        // solution 3 0(1)
-        // return num > 0 && ((num & (num - 1)) == 0) && (num - 1) % 3 == 0;
-        
-        // solution 4 o(1)
-         int alternatingOddBitMask = 0x55555555; // 1010101010101010101010101010101
+    public boolean isPowerOfFour(int n) {
+        int alternatingOddBitMask = 0x55555555; // 1010101010101010101010101010101
+        boolean isNonZero = (n != 0);
+        boolean hasSingleLeadingOneBit = (n & (n - 1)) == 0;
+        boolean hasOnlyOddPositionedBits = (n & alternatingOddBitMask) == n;
 ​
-    boolean isNonZero = (num != 0);
-    boolean hasSingleLeadingOneBit = (num & (num - 1)) == 0;
-    boolean hasOnlyOddPositionedBits = (num & alternatingOddBitMask) == num;
-​
-    return isNonZero && hasSingleLeadingOneBit && hasOnlyOddPositionedBits;
+        return isNonZero && hasSingleLeadingOneBit && hasOnlyOddPositionedBits;
     }
 }
+​
+/*
+​
+​
+​
+```
+​
+```
+​
+​
+```
+    public boolean isPowerOfFour(int n) {
+       return (Math.log(n) / Math.log(4)) % 1 == 0;
+    }
+```
+​
+```
+    public boolean isPowerOfFour(int n) {
+        if(n == 0) return false;
+        while(n != 1){
+            if(n % 4 != 0) return false;
+            n /= 4;
+        }
+        return true;
+    }
+}
+```
+​
+```
+   public boolean isPowerOfFour(int n) {
+        return ((n & (n-1)) == 0 && (n % 3) == 1);
+    }
+``` 
+*/
