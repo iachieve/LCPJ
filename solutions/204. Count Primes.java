@@ -1,4 +1,5 @@
 class Solution {
+    
     public int countPrimes(int n) {
         int counter = 0;
         boolean[] seen = new boolean[n];
@@ -14,7 +15,8 @@ class Solution {
         }
         for(int i = 2; i < seen.length; i++){
             if(seen[i]) counter++;
-        }
+        }
         return counter;
+        
     }
 }
