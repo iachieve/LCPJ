@@ -8,15 +8,12 @@ class Solution {
         }
         for(int i = 2; i < n; i++){
             if(seen[i]){
-                for(int j = i+i; j < n; j += i){
-                    seen[j] = false;
-                }
+                counter++;
+                if(i <= Math.sqrt(n))
+                    for(int j = i*i; j < n; j += i) seen[j] = false;
+                
             }
         }
-        for(int i = 2; i < seen.length; i++){
-            if(seen[i]) counter++;
-        }
         return counter;
-        
     }
 }
