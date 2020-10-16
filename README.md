@@ -10,6 +10,7 @@
 |190|[ Reverse Bits](https://leetcode.com/problems/reverse-bits/)|[Java](./solutions/190.%20Reverse%20Bits.java)|2 ms|
 |204|[ Count Primes](https://leetcode.com/problems/count-primes/)|[Java](./solutions/204.%20Count%20Primes.java)|19 ms|
 |231|[ Power of Two](https://leetcode.com/problems/power-of-two/)|[Java](./solutions/231.%20Power%20of%20Two.java)|1 ms|
+|290|[ Word Pattern](https://leetcode.com/problems/word-pattern/)|[Java](./solutions/290.%20Word%20Pattern.java)|1 ms|
 |342|[ Power of Four](https://leetcode.com/problems/power-of-four/)|[Java](./solutions/342.%20Power%20of%20Four.java)|1 ms|
 |415|[ Add Strings](https://leetcode.com/problems/add-strings/)|[Java](./solutions/415.%20Add%20Strings.java)|3 ms|
 |504|[ Base 7](https://leetcode.com/problems/base-7/)|[Java](./solutions/504.%20Base%207.java)|1 ms|
