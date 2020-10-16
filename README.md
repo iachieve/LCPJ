@@ -2,6 +2,7 @@
 
 | # | Title | Solution | Runtime |
 |---| ----- | -------- | ------- |
+|6|[ ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/)|[Java](./solutions/6.%20ZigZag%20Conversion.java)|13 ms|
 |9|[ Palindrome Number](https://leetcode.com/problems/palindrome-number/)|[Java](./solutions/9.%20Palindrome%20Number.java)|7 ms|
 |15|[ 3Sum](https://leetcode.com/problems/3sum/)|[Java](./solutions/15.%203Sum.java)|20 ms|
 |36|[ Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)|[Java](./solutions/36.%20Valid%20Sudoku.java)|14 ms|
