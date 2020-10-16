@@ -29,6 +29,3 @@ class Solution {
 //         }
 //         for(int i=0;i<str.length;i++)
 //         {
-//             String res=search(str[i]);
-//             if(res!=null)
-//               str[i]=res;
