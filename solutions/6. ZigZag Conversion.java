@@ -1,18 +1,21 @@
 class Solution {
     public String convert(String s, int numRows) {
-        List<String> output = new ArrayList<>(Collections.nCopies(numRows + 1, ""));
+        if(numRows == 1) return s;
         boolean down = false;
         int row = 0;
-        for(char c: s.toCharArray()){
-            output.set(row, output.get(row) + c );
+        
+        List<StringBuilder> output = new ArrayList<>();
+        for (int i = 0; i < Math.min(numRows, s.length()); i++)
+            output.add(new StringBuilder());
+        
+​
+        for(char c : s.toCharArray()){
+            output.get(row).append(c);
             if((row == 0) || (row == numRows - 1)) down = !down;
-            if(numRows > 1){
-                if(down) row++;
-                    else row--;
-            }
+            row += down ? 1 : -1;
         }
         StringBuilder sb = new StringBuilder();
-        for(String st: output) sb.append(st);
+        for(StringBuilder st: output) sb.append(st);
         return sb.toString();
     }
 }
