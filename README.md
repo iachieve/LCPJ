@@ -15,6 +15,7 @@
 |204|[ Count Primes](https://leetcode.com/problems/count-primes/)|[Java](./solutions/204.%20Count%20Primes.java)|19 ms|
 |206|[ Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)|[Java](./solutions/206.%20Reverse%20Linked%20List.java)|0 ms|
 |231|[ Power of Two](https://leetcode.com/problems/power-of-two/)|[Java](./solutions/231.%20Power%20of%20Two.java)|1 ms|
+|234|[ Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)|[Java](./solutions/234.%20Palindrome%20Linked%20List.java)|2 ms|
 |290|[ Word Pattern](https://leetcode.com/problems/word-pattern/)|[Java](./solutions/290.%20Word%20Pattern.java)|1 ms|
 |342|[ Power of Four](https://leetcode.com/problems/power-of-four/)|[Java](./solutions/342.%20Power%20of%20Four.java)|1 ms|
 |409|[ Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)|[Java](./solutions/409.%20Longest%20Palindrome.java)|1 ms|
