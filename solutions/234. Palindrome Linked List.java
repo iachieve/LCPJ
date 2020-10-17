@@ -12,25 +12,19 @@ class Solution {
     // two pointers technique (slow and fast)
     public boolean isPalindrome(ListNode head) {
         if(head == null) return true;
-        
         ListNode slow = head, fast = head;
-        
         while(fast.next != null && fast.next.next != null){
-            fast = fast.next.next;
             slow = slow.next;
+            fast = fast.next.next;
         }
+        ListNode leftHead = head;
+        ListNode rightHead = reverseIterative(slow.next);
         
-        // ListNode secondHalfHead = reverseReclursiveley(slow.next);
-        ListNode secondHalfHead = reverseIterative(slow.next);
-        ListNode firstHalfHead = head;
-        
-        while(secondHalfHead !=null && firstHalfHead != null){
+        while(leftHead !=null && rightHead !=null){
+            if(leftHead.val != rightHead.val) return false;
             
-            if(secondHalfHead.val != firstHalfHead.val){
-                return false;
-            }
-            secondHalfHead = secondHalfHead.next;
-            firstHalfHead = firstHalfHead.next;
+            leftHead = leftHead.next;
+            rightHead = rightHead.next;
         }
         return true;
     }
@@ -55,5 +49,10 @@ class Solution {
     Memory Usage: 46.7 MB, less than 6.79% of Java online submissions for Palindrome Linked List.
     */
     private ListNode reverseReclursiveley(ListNode head){
-        if(head == null || head.next == null) return head;
+      if(head == null || head.next == null) return head;
         ListNode newHead = reverseReclursiveley(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+}
