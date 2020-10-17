@@ -8,6 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+​
 class Solution {
     // two pointers technique (slow and fast)
     public boolean isPalindrome(ListNode head) {
