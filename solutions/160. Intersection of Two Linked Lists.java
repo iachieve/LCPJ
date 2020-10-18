@@ -9,6 +9,7 @@
  *     }
  * }
  */
+​
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int aLen = length(headA);
@@ -28,23 +29,3 @@ public class Solution {
         while(headA != null && headB!= null){
             if(headA == headB) return headA;
             headA = headA.next;
-            headB = headB.next;
-        }
-        
-        return null;
-    }
-    
-    private ListNode advance(ListNode node, int count){
-        while(count > 0){
-            if(node.next == null) return node;
-            node = node.next;
-            count--;
-        }
-        return node;
-    }
-    
-    private int length(ListNode head) {
-    if (head == null) {
-      return 0;
-    }
-​
