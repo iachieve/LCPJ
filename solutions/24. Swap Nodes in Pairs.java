@@ -1,30 +1,34 @@
 class Solution {
     public ListNode swapPairs(ListNode head) {
+        // sanity
         if(head == null || head.next == null) return head;
+        // three pointers
         ListNode first = head, second = head.next, startOfNewSegment = null;
+        // set new head to second node
         head = head.next;
         while(true){
-            // set pointer to new segment(pair) // advance cursor
+            // advance pinter(1/3)
             startOfNewSegment = second.next;
-            // wire next to first
+            
+            // wire (1/2)
             second.next = first;
+            
+            // end of last pass, wire first 
+            // return head
             if(startOfNewSegment == null || startOfNewSegment.next == null){
                 first.next = startOfNewSegment;
                 return head;
             }
-            
-            // wire first to the second node in the new pair
+            // wire (2/2)
             first.next = startOfNewSegment.next;
-            
-            // advance cursor
+            // advance pointer(2/3)
             first = startOfNewSegment;
-            // advance cursor
+            // advance pointer(3/3)
             second = startOfNewSegment.next;
-        }
+        }
+    
     }
 }
-​
-​
 ​
 ​
 ​
