@@ -6,6 +6,7 @@
 |6|[ ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/)|[Java](./solutions/6.%20ZigZag%20Conversion.java)|5 ms|
 |9|[ Palindrome Number](https://leetcode.com/problems/palindrome-number/)|[Java](./solutions/9.%20Palindrome%20Number.java)|7 ms|
 |15|[ 3Sum](https://leetcode.com/problems/3sum/)|[Java](./solutions/15.%203Sum.java)|20 ms|
+|19|[ Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)|[Java](./solutions/19.%20Remove%20Nth%20Node%20From%20End%20of%20List.java)|0 ms|
 |36|[ Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)|[Java](./solutions/36.%20Valid%20Sudoku.java)|14 ms|
 |48|[ Rotate Image](https://leetcode.com/problems/rotate-image/)|[Java](./solutions/48.%20Rotate%20Image.java)|0 ms|
 |49|[ Group Anagrams](https://leetcode.com/problems/group-anagrams/)|[Java](./solutions/49.%20Group%20Anagrams.java)|6 ms|
