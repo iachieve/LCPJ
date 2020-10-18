@@ -9,7 +9,6 @@
  *     }
  * }
  */
-​
 // solution using fast and slow pointer technique
 public class Solution {
     public boolean hasCycle(ListNode head) {
