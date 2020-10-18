@@ -18,9 +18,9 @@ class Solution {
             right = right.next;
             if(n-- <= 0){
                 left = left.next;
-            }
+            }
         }
         left.next = left.next.next;
-        return head;
+        return dummy.next;
     }
 }
