@@ -20,6 +20,7 @@ class Solution {
                 ptr1 = ptr1.next;
             }
             
+            
               if(ptr2 != null){
                 sum += ptr2.val;
                 ptr2 = ptr2.next;
