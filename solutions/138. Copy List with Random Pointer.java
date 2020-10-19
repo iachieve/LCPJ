@@ -1,56 +1,20 @@
-/*
-// Definition for a Node.
-class Node {
-    int val;
-    Node next;
-    Node random;
-​
-    public Node(int val) {
-        this.val = val;
-        this.next = null;
-        this.random = null;
-    }
-}
-*/
-​
-// deep copy => new whole list with new memory location
-// solution #2 using Wiring Pointers T:O(n) S:O(1)
-​
-class Solution {
-​
-    public Node copyRandomList(Node head) {
-            Node curr = head;
-            Node tempPtr = null;
-​
-            // first pass
-            // clone & change curr.next reference to the new clone
-            while(curr != null){
-              tempPtr = curr.next;
-              Node copy = new Node(curr.val);
-              curr.next = copy;
-              copy.next = tempPtr;
-              curr = tempPtr;
-            }
-​
-            // second pass
-            // update clone's random reference
-            curr = head;
-            while(curr != null){
-              if(curr.random!= null) 
-                  curr.next.random = curr.random.next;
               curr = curr.next.next; // <<<=====
             }
 ​
-            // third pass
+            /* third pass
+                1- build clone list
+                2- restore original list
+            */
             curr = head;
             Node dummyHead = new Node(-1);
             Node cloneListTail = dummyHead;
             Node copy = null;
             while(curr !=null){
               tempPtr = curr.next.next; // carry reference to curr.next
-              copy = curr.next;
-              // append the copy to the final list tails
-​
+              
+              // **clone part
+              // append the copy to the final list tails
+              copy = curr.next;
               cloneListTail.next = copy; // building the clone linkedlist
               cloneListTail = copy; // advance cloneListTail pointer
 ​
@@ -62,3 +26,25 @@ class Solution {
             return dummyHead.next;
         /*
        // solution 1 using hashmap T:O(n) S:O(n)
+        Map<Node, Node> cloneMap = new HashMap<>();
+        Node curr = head;
+        // first pass
+        // populate cloneMap
+        // key: current original value
+        // value: clone of current
+        while(curr != null){
+            cloneMap.put(curr, new Node(curr.val));
+            curr = curr.next;
+        }
+        
+        curr = head;
+        while(curr != null){
+            cloneMap.get(curr).next = cloneMap.get(curr.next);
+            cloneMap.get(curr).random = cloneMap.get(curr.random);
+            curr = curr.next;
+        }
+        return cloneMap.get(head);
+        */
+    }
+    
+}
