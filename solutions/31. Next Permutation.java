@@ -18,6 +18,7 @@ class Solution {
                     0 < 3   | 3 < 4 | 4 < 5 | 5 !< 1
                     first number we need to swap is 1
 ​
+                Next:
                 we got the first number to swap which is 1
                 now walk backwards and look for the first greater number than 1
                 Ex: input = {6,2,(1),5,4,3,0}
