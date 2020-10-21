@@ -12,6 +12,7 @@
 |36|[ Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)|[Java](./solutions/36.%20Valid%20Sudoku.java)|14 ms|
 |48|[ Rotate Image](https://leetcode.com/problems/rotate-image/)|[Java](./solutions/48.%20Rotate%20Image.java)|0 ms|
 |49|[ Group Anagrams](https://leetcode.com/problems/group-anagrams/)|[Java](./solutions/49.%20Group%20Anagrams.java)|6 ms|
+|54|[ Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)|[Java](./solutions/54.%20Spiral%20Matrix.java)|0 ms|
 |61|[ Rotate List](https://leetcode.com/problems/rotate-list/)|[Java](./solutions/61.%20Rotate%20List.java)||
 |67|[ Add Binary](https://leetcode.com/problems/add-binary/)|[Java](./solutions/67.%20Add%20Binary.java)|2 ms|
 |92|[ Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)|[Java](./solutions/92.%20Reverse%20Linked%20List%20II.java)|0 ms|
