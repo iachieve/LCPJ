@@ -29,8 +29,36 @@ class Solution {
     
     }
 }
-​
-​
-​
-​
-​
+
+/* easier iterative solution
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+       if (head == null || head.next == null) {
+        return head;
+    }
+    ListNode pre = new ListNode(0), p = head, ret = head.next;
+    while (p != null && p.next != null) {
+        ListNode nxt = p.next;
+        p.next = nxt.next;
+        nxt.next = p;
+        pre.next = nxt;
+        pre = p;
+        p = p.next;
+    }
+    return ret;
+    
+    }
+}
+*/
+/* recursive solution
+public ListNode swapPairs(ListNode head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+    ListNode nxt = head.next;
+    head.next = swapPairs(nxt.next);
+    nxt.next = head;
+    return nxt;
+}
+
+*/
