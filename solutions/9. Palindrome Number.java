@@ -1,5 +1,6 @@
 class Solution {
     public boolean isPalindrome(int x) {
+        // saved
         if(x < 0) return false;
         int len = (int) Math.floor(Math.log10(x)) + 1;
         int mask = (int)Math.pow(10, len - 1);
