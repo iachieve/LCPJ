@@ -37,6 +37,7 @@
 |504|[ Base 7](https://leetcode.com/problems/base-7/)|[Java](./solutions/504.%20Base%207.java)|1 ms|
 |539|[ Minimum Time Difference](https://leetcode.com/problems/minimum-time-difference/)|[Java](./solutions/539.%20Minimum%20Time%20Difference.java)|1 ms|
 |560|[ Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)|[Java](./solutions/560.%20Subarray%20Sum%20Equals%20K.java)|12 ms|
+|622|[ Design Circular Queue](https://leetcode.com/problems/design-circular-queue/)|[Java](./solutions/622.%20Design%20Circular%20Queue.java)|4 ms|
 |648|[ Replace Words](https://leetcode.com/problems/replace-words/)|[Java](./solutions/648.%20Replace%20Words.java)|174 ms|
 |867|[ Transpose Matrix](https://leetcode.com/problems/transpose-matrix/)|[Java](./solutions/867.%20Transpose%20Matrix.java)|0 ms|
 |868|[ Binary Gap](https://leetcode.com/problems/binary-gap/)|[Java](./solutions/868.%20Binary%20Gap.java)|1 ms|
