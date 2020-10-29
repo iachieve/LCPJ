@@ -1,13 +1,13 @@
 class Solution {
     public String simplifyPath(String path) {
-        Stack<String> stack = new Stack<>();
-        List<String> notAllowed = new ArrayList<>(Arrays.asList(".", "", ".."));
+        Stack stk = new Stack();
         String[] paths = path.split("/");
-        for(String p: paths){
-            if(!stack.isEmpty() && p.equals("..")) stack.pop();
-            else if(!notAllowed.contains(p)) stack.push(p);
-        }
         
-        return "/" + String.join("/", stack);
+        for(String s: paths){
+            if(!stk.isEmpty() && s.equals("..")) stk.pop();
+            if(!s.isEmpty() && !s.equals(".") && !s.equals("..") && !s.equals(" ") ) stk.push(s);
+            System.out.println(stk);
+        }
+        return  "/" + String.join("/", stk);
     }
 }
