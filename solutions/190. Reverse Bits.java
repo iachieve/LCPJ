@@ -1,19 +1,30 @@
 public class Solution {
-    // you need treat n as an unsigned value
+    // in real world scenario: Integer.reverse(n);
+    
+    // two rules:
+    // In order to know if the current bit is 0 or 1, use (& 1)
+    //      1 & 1 = 1  AND 0 & 1 = 0
+    // In order to reverse a bit use (|0)
+    //      1 | 0 = 1   AND  0|0 = 0
     public int reverseBits(int n) {
-        int times = 32, res = 0;
-        List<Integer> l = new ArrayList();
-        while(times > 0){
-            int t = n & 1;
-            l.add(0, t);
+        // start result with zeros (000 0000)
+        int result = 0;
+        // the max int size in is 32 bits => 0->31 = 32 iteration
+        for (int i = 0; i < 32; i++) {
+            // get the last digit from n input  // 1 & 1 = 1 && 1 & 0 = 0
+            int end = n & 1;
+            // shift the right binary digit, in order to process the next bit
             n >>= 1;
-            times--;
+            // append zero to result
+            result <<= 1;
+            // update result && update the result 0|1 = 1 && 0|0 = 0
+            result |= end;
         }
-        
-        for(int i = l.size() - 1; i >= 0; i--){
-            res <<= 1;
-            res = res | l.get(i);
-        }
-        return res;
+        return result;
     }
 }
+​
+​
+​
+​
+    
