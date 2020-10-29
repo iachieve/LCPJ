@@ -22,6 +22,7 @@
 |125|[ Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)|[Java](./solutions/125.%20Valid%20Palindrome.java)|212 ms|
 |138|[ Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)|[Java](./solutions/138.%20Copy%20List%20with%20Random%20Pointer.java)|0 ms|
 |141|[ Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)|[Java](./solutions/141.%20Linked%20List%20Cycle.java)|0 ms|
+|155|[ Min Stack](https://leetcode.com/problems/min-stack/)|[Java](./solutions/155.%20Min%20Stack.java)|4 ms|
 |160|[ Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)|[Java](./solutions/160.%20Intersection%20of%20Two%20Linked%20Lists.java)|1 ms|
 |190|[ Reverse Bits](https://leetcode.com/problems/reverse-bits/)|[Java](./solutions/190.%20Reverse%20Bits.java)|1 ms|
 |204|[ Count Primes](https://leetcode.com/problems/count-primes/)|[Java](./solutions/204.%20Count%20Primes.java)|19 ms|
