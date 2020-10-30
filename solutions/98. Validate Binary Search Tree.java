@@ -13,30 +13,34 @@
  *     }
  * }
  */
+// iterative solution
 ​
+class Solution {
+  public boolean isValidBST(TreeNode root) {
+    Stack<TreeNode> stack = new Stack();
+    double inorder =  - Double.MAX_VALUE;
+​
+    while (!stack.isEmpty() || root != null) {
+      while (root != null) {
+        stack.push(root);
+        root = root.left;
+      }
+      root = stack.pop();
+      // If next element in inorder traversal
+      // is smaller than the previous one
+      // that's not BST.
+      if (root.val <= inorder) return false;
+      inorder = root.val;
+      root = root.right;
+    }
+    return true;
+  }
+}
+​
+/*
 // recursive solution
 class Solution {
     public boolean isValidBST(TreeNode root) {
         return isValidBST(root, null, null);
-    }
+    }
     
-    public boolean isValidBST(TreeNode node, Integer min, Integer max){
-        if(node == null) return true;
-        Integer val = node.val;
-        if((min != null && node.val <= min) || (max != null && val >= max)) return false;
-        return isValidBST(node.left, min, node.val) &&
-            isValidBST(node.right, node.val, max);
-        
-    }
-}
-​
-​
-​
-​
-​
-​
-​
-​
-​
-​
-​
