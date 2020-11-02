@@ -1,44 +1,62 @@
+
+public int pathSum(TreeNode root, int target) {
+        Map<integer, integer=""> map = new HashMap<>();
+        map.put(0, 1);
+        return helper(root, target, map, 0);
+    }
+
+    private int helper(TreeNode root, int target, Map<integer, integer=""> map, int runningSum) {
+       if(root == null) return 0;
+       runningSum += root.val;
+       int count = map.getOrDefault(runningSum - target, 0);
+       map.put(runningSum, map.getOrDefault(runningSum, 0) + 1);
+       count += helper(root.left, target, map, runningSum) + helper(root.right, target, map, runningSum);
+       map.put(runningSum, map.get(runningSum) - 1); // backtracking to clear the previous branch sum
+       return count;
+    }
+
+
 // All Paths With Sum (Optimal)
-class Solution {
-  public int pathSum(TreeNode root, int sum) {
-    if (root == null) {
-      return 0;
-    }
+// class Solution {
+//   public int pathSum(TreeNode root, int sum) {
+//     if (root == null) {
+//       return 0;
+//     }
 
-    Map<Integer, Integer> prefixSumToTotalPrefixes = new HashMap<>();
+//     Map<Integer, Integer> prefixSumToTotalPrefixes = new HashMap<>();
 
-    prefixSumToTotalPrefixes.put(0, 1);
+//     prefixSumToTotalPrefixes.put(0, 1);
 
-    return findPathSum(root, 0, sum, prefixSumToTotalPrefixes);
-  }
+//     return findPathSum(root, 0, sum, prefixSumToTotalPrefixes);
+//   }
 
-  private int findPathSum(
-    TreeNode node,
-    int rootToNodeSum,
-    int target,
-    Map<Integer, Integer> prefixSumToTotalPrefixes
-  ) {
-    if (node == null) {
-      return 0;
-    }
+//   private int findPathSum(
+//     TreeNode node,
+//     int rootToNodeSum,
+//     int target,
+//     Map<Integer, Integer> prefixSumToTotalPrefixes
+//   ) {
+//     if (node == null) {
+//       return 0;
+//     }
 
-    rootToNodeSum += node.val;
+//     rootToNodeSum += node.val;
     
-    int amountToCompensateFor = rootToNodeSum - target;
-    int totalPathsEndingAtThisNode = prefixSumToTotalPrefixes.getOrDefault(amountToCompensateFor, 0);
+//     int amountToCompensateFor = rootToNodeSum - target;
+//     int totalPathsEndingAtThisNode = prefixSumToTotalPrefixes.getOrDefault(amountToCompensateFor, 0);
     
-    int totalPathsWithThisPathsSum = prefixSumToTotalPrefixes.getOrDefault(rootToNodeSum, 0);
-    prefixSumToTotalPrefixes.put(rootToNodeSum, totalPathsWithThisPathsSum + 1);
+//     int totalPathsWithThisPathsSum = prefixSumToTotalPrefixes.getOrDefault(rootToNodeSum, 0);
+//     prefixSumToTotalPrefixes.put(rootToNodeSum, totalPathsWithThisPathsSum + 1);
 
-    int totalCompletedPathsInThisSubtree = totalPathsEndingAtThisNode
-        + findPathSum(node.left, rootToNodeSum, target, prefixSumToTotalPrefixes)
-        + findPathSum(node.right, rootToNodeSum, target, prefixSumToTotalPrefixes);
+//     int totalCompletedPathsInThisSubtree = totalPathsEndingAtThisNode
+//         + findPathSum(node.left, rootToNodeSum, target, prefixSumToTotalPrefixes)
+//         + findPathSum(node.right, rootToNodeSum, target, prefixSumToTotalPrefixes);
 
-    prefixSumToTotalPrefixes.put(rootToNodeSum, prefixSumToTotalPrefixes.getOrDefault(rootToNodeSum, 0) - 1);
+//     prefixSumToTotalPrefixes.put(rootToNodeSum, prefixSumToTotalPrefixes.getOrDefault(rootToNodeSum, 0) - 1);
 
-    return totalCompletedPathsInThisSubtree;
-  }
-}
+//     return totalCompletedPathsInThisSubtree;
+//   }
+// }
 
 
 
