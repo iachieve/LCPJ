@@ -1,11 +1,11 @@
 
 public int pathSum(TreeNode root, int target) {
-        Map<integer, integer=""> map = new HashMap<>();
+        Map<integer, integer> map = new HashMap<>();
         map.put(0, 1);
         return helper(root, target, map, 0);
     }
 
-    private int helper(TreeNode root, int target, Map<integer, integer=""> map, int runningSum) {
+    private int helper(TreeNode root, int target, Map<integer, integer> map, int runningSum) {
        if(root == null) return 0;
        runningSum += root.val;
        int count = map.getOrDefault(runningSum - target, 0);
