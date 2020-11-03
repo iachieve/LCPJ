@@ -1,3 +1,21 @@
+class Solution {
+    // 1    /   20
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        Map<Integer, Integer> inorderMap = new HashMap<>();
+        for(int i = 0 ; i < inorder.length; i++) inorderMap.put(inorder[i], i);
+        return helper(0, 0, inorder.length - 1, preorder, inorderMap);
+    }
+    private TreeNode helper(int preStart, int inStart, int inEnd, int[] preorder, Map<Integer, Integer> inorderMap){
+        if(inStart > inEnd) return null;
+        TreeNode curr = new TreeNode(preorder[preStart]);
+        int inPivot = inorderMap.get(preorder[preStart]);
+        curr.left = helper(preStart + 1, inStart, inPivot - 1, preorder, inorderMap);
+        curr.right = helper(preStart + inPivot - inStart + 1, inPivot + 1, inEnd, preorder, inorderMap);
+        return curr;
+    }
+}
+
+
 
 // Runtime: 1 ms, faster than 98.38% of Java online submissions for Construct Binary Tree from Preorder and Inorder Traversal.
 // Memory Usage: 39.1 MB, less than 5.63% of Java online submissions for Construct Binary Tree from Preorder and Inorder Traversal.
