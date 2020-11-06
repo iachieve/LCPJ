@@ -62,3 +62,4 @@
 |916|[ Word Subsets](https://leetcode.com/problems/word-subsets/)|[Java](./solutions/916.%20Word%20Subsets.java)|14 ms|
 |921|[ Minimum Add to Make Parentheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)|[Java](./solutions/921.%20Minimum%20Add%20to%20Make%20Parentheses%20Valid.java)|1 ms|
 |1249|[ Minimum Remove to Make Valid Parentheses](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/)|[Java](./solutions/1249.%20Minimum%20Remove%20to%20Make%20Valid%20Parentheses.java)|13 ms|
+|1382|[ Balance a Binary Search Tree](https://leetcode.com/problems/balance-a-binary-search-tree/)|[Java](./solutions/1382.%20Balance%20a%20Binary%20Search%20Tree.java)|2 ms|
