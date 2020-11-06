@@ -47,6 +47,7 @@
 |342|[ Power of Four](https://leetcode.com/problems/power-of-four/)|[Java](./solutions/342.%20Power%20of%20Four.java)|1 ms|
 |409|[ Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)|[Java](./solutions/409.%20Longest%20Palindrome.java)|1 ms|
 |415|[ Add Strings](https://leetcode.com/problems/add-strings/)|[Java](./solutions/415.%20Add%20Strings.java)|3 ms|
+|421|[ Maximum XOR of Two Numbers in an Array](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/)|[Java](./solutions/421.%20Maximum%20XOR%20of%20Two%20Numbers%20in%20an%20Array.java)|120 ms|
 |430|[ Flatten a Multilevel Doubly Linked List](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/)|[Java](./solutions/430.%20Flatten%20a%20Multilevel%20Doubly%20Linked%20List.java)|0 ms|
 |437|[ Path Sum III](https://leetcode.com/problems/path-sum-iii/)|[Java](./solutions/437.%20Path%20Sum%20III.java)|2 ms|
 |450|[ Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)|[Java](./solutions/450.%20Delete%20Node%20in%20a%20BST.java)|0 ms|
