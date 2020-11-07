@@ -7,5 +7,15 @@ public class Solution {
             n= n >>> 1;
         }
         return c;
+        
+        /*
+        // solution 2
+            int c = 0;
+            while (n != 0){
+                c++;
+                n &= (n-1);
+            }
+            return c;
+        */
     }
 }
