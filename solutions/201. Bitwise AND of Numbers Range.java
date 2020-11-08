@@ -6,6 +6,6 @@ class Solution {
             n = n >> 1;
             count++;
         }
-        return m << count;
+        return n << count;
     }
 }
