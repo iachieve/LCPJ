@@ -5,5 +5,5 @@ class Solution {
             a ^= i;
         }
         return a;
-    }
+    }
 }
