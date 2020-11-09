@@ -6,7 +6,7 @@
 |3|[ Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|[Java](./solutions/3.%20Longest%20Substring%20Without%20Repeating%20Characters.java)|7 ms|
 |6|[ ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/)|[Java](./solutions/6.%20ZigZag%20Conversion.java)|5 ms|
 |9|[ Palindrome Number](https://leetcode.com/problems/palindrome-number/)|[Java](./solutions/9.%20Palindrome%20Number.java)|8 ms|
-|15|[ 3Sum](https://leetcode.com/problems/3sum/)|[Java](./solutions/15.%203Sum.java)|20 ms|
+|15|[ 3Sum](https://leetcode.com/problems/3sum/)|[Java](./solutions/15.%203Sum.java)|19 ms|
 |19|[ Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)|[Java](./solutions/19.%20Remove%20Nth%20Node%20From%20End%20of%20List.java)|0 ms|
 |20|[ Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)|[Java](./solutions/20.%20Valid%20Parentheses.java)|2 ms|
 |23|[ Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)|[Java](./solutions/23.%20Merge%20k%20Sorted%20Lists.java)|5 ms|
