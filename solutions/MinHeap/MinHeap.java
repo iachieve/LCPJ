@@ -1,9 +1,10 @@
 package MinHeap;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MinHeap implements IMinHeap {
-    List<Integer> heap;
+    public List<Integer> heap = new ArrayList<>();
 
     public MinHeap(List<Integer> array) {
         heap = buildHeap(array);

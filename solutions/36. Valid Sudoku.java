@@ -1,10 +1,10 @@
 class Solution {
-    public boolean isValidSudoku(char[][] board) {
-        Set set = new HashSet();
-        StringBuilder rowSB = new StringBuilder();
-        StringBuilder colSB = new StringBuilder();
-        StringBuilder boxSB = new StringBuilder();
-​
+ public boolean isValidSudoku(char[][] board) {
+ Set set = new HashSet();
+StringBuilder rowSB = new StringBuilder();
+StringBuilder colSB = new StringBuilder();
+StringBuilder boxSB = new StringBuilder();
+
         for(int i = 0; i < 9; i++){
             for(int c = 0; c < 9; c++){
                 rowSB.setLength(0);
