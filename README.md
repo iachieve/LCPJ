@@ -33,6 +33,7 @@
 |136|[ Single Number](https://leetcode.com/problems/single-number/)|[Java](./solutions/136.%20Single%20Number.java)|1 ms|
 |138|[ Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)|[Java](./solutions/138.%20Copy%20List%20with%20Random%20Pointer.java)|0 ms|
 |141|[ Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)|[Java](./solutions/141.%20Linked%20List%20Cycle.java)|0 ms|
+|153|[ Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)|[Java](./solutions/153.%20Find%20Minimum%20in%20Rotated%20Sorted%20Array.java)|0 ms|
 |155|[ Min Stack](https://leetcode.com/problems/min-stack/)|[Java](./solutions/155.%20Min%20Stack.java)|4 ms|
 |160|[ Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)|[Java](./solutions/160.%20Intersection%20of%20Two%20Linked%20Lists.java)|1 ms|
 |190|[ Reverse Bits](https://leetcode.com/problems/reverse-bits/)|[Java](./solutions/190.%20Reverse%20Bits.java)|1 ms|
