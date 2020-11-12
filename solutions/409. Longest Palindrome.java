@@ -21,7 +21,7 @@ class Solution {
         for(char c: s.toCharArray()) counts[c]++;
         for(Integer cc: counts){
             result += cc / 2 * 2;
-            if(result % 2 == 0 && cc % 2 == 1) result += 1;
+            if(result % 2 == 0 && cc % 2 == 1) result += 1; // unique center
         }
         return result;
         
