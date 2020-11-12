@@ -6,11 +6,7 @@ class Solution {
         * Runtime: 1 ms, faster than 100.00% of Java online submissions for Longest Palindrome.
         * Memory Usage: 37.2 MB, less than 16.70% of Java online submissions for Longest Palindrome.
         */
-        
-        
-        
-        
-        
+
         // ********** Integer Array Solution **********
         /*
         * Runtime: 1 ms, faster than 100.00% of Java online submissions for Longest Palindrome.
