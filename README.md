@@ -54,6 +54,7 @@
 |297|[ Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|[Java](./solutions/297.%20Serialize%20and%20Deserialize%20Binary%20Tree.java)||
 |328|[ Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/)|[Java](./solutions/328.%20Odd%20Even%20Linked%20List.java)|0 ms|
 |342|[ Power of Four](https://leetcode.com/problems/power-of-four/)|[Java](./solutions/342.%20Power%20of%20Four.java)|1 ms|
+|349|[ Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)|[Java](./solutions/349.%20Intersection%20of%20Two%20Arrays.java)|2 ms|
 |409|[ Longest Palindrome](https://leetcode.com/problems/longest-palindrome/)|[Java](./solutions/409.%20Longest%20Palindrome.java)|1 ms|
 |415|[ Add Strings](https://leetcode.com/problems/add-strings/)|[Java](./solutions/415.%20Add%20Strings.java)|3 ms|
 |421|[ Maximum XOR of Two Numbers in an Array](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/)|[Java](./solutions/421.%20Maximum%20XOR%20of%20Two%20Numbers%20in%20an%20Array.java)|120 ms|
