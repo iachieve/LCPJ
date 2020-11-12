@@ -1,0 +1,63 @@
+        
+        
+        /*
+// Runtime: 3 ms, faster than 36.13% of Java online submissions for Intersection of Two Arrays.
+// Memory Usage: 39.3 MB, less than 9.32% of Java online submissions for Intersection of Two Arrays.
+    
+        Arrays.sort(nums1);
+        HashSet<Integer> itersect = new HashSet<>();
+        
+        for(int num: nums2){
+            if(find(num, nums1)){
+                itersect.add(num);
+            }
+        }
+        
+        int i = 0;
+         int[] result = new int[itersect.size()];
+        for(int num: itersect){
+            result[i] = num;
+            i++;
+        }
+        
+        return result;
+        */
+        
+        
+        
+        //Runtime: 2 ms, faster than 98.26% of Java online submissions for Intersection of Two Arrays.
+// Memory Usage: 39.4 MB, less than 9.32% of Java online submissions for Intersection of Two Arrays.
+        Set<Integer> set1 = new HashSet<>();
+        for(int num: nums1) set1.add(num);
+        
+        Set<Integer> intersect = new HashSet<>();
+        for(int num: nums2){
+            if(set1.contains(num)) intersect.add(num);
+        }
+        int i = 0;
+        int[] result = new int[intersect.size()];
+        for(int num: intersect){
+            result[i] = num;
+            i++;
+        }
+        return result; 
+        
+        
+        /*
+        time: O(n+m) on average
+        worst case: O(n*m)
+        space: O(n+m) => two hashsets
+        
+        // Runtime: 2 ms, faster than 98.26% of Java online submissions for Intersection of Two Arrays.
+// Memory Usage: 39 MB, less than 9.32% of Java online submissions for Intersection of Two Arrays.
+        Set<Integer> set1 = new HashSet<>();
+        for(int num: nums1) set1.add(num);
+        
+        Set<Integer> set2 = new HashSet<>();
+        for(int num: nums2) set2.add(num);
+        
+        set1.retainAll(set2);
+        
+        int[] result = new int[set1.size()];
+        int i = 0;
+        for(int num: set1){
