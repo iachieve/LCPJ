@@ -22,22 +22,18 @@ class Solution {
         
 //         // Runtime: 5 ms, faster than 73.47% of Java online submissions for ZigZag Conversion.
 //         // Memory Usage: 40 MB, less than 28.41% of Java online submissions for ZigZag Conversion.
-        if(numRows == 1) return s;
-        boolean down = false;
-        int row = 0;
-        
+         if(numRows == 1 || numRows > s.length()) return s;
         List<StringBuilder> output = new ArrayList<>();
-        for (int i = 0; i < Math.min(numRows, s.length()); i++)
-            output.add(new StringBuilder());
-        
-
+        for(int i = 0; i < numRows; i++) output.add(new StringBuilder());
+        int row = 0;
+        boolean down = false;
         for(char c : s.toCharArray()){
             output.get(row).append(c);
-            if((row == 0) || (row == numRows - 1)) down = !down;
+            if(row == 0 || row == numRows - 1) down = !down;
             row += down ? 1 : -1;
         }
-        StringBuilder sb = new StringBuilder();
-        for(StringBuilder st: output) sb.append(st);
-        return sb.toString();
+        StringBuilder res = new StringBuilder();
+        for(StringBuilder st : output) res.append(st);
+        return res.toString();
     }
 }
