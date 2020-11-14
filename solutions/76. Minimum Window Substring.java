@@ -1,35 +1,46 @@
-    # Dictionary which keeps a count of all the unique characters in the current window.
-    window_counts = {}
+class Solution {
+    public String minWindow(String s, String t) {
+      Map<Character, Integer> dicT = new HashMap<>();
+        for(char c: t.toCharArray()) dicT.put(c, dicT.getOrDefault(c, 0) + 1);
+        Map<Character, Integer> window = new HashMap<>();
+        int left = 0, right = 0, tMapSize = dicT.size(), min = Integer.MAX_VALUE, formed = 0;
+        String result = "";
 ​
-    # ans tuple of the form (window length, left, right)
-    ans = float("inf"), None, None
+        while (right < s.length()) {
+            // expand
+            char rightChar = s.charAt(right);
+            window.put(rightChar, window.getOrDefault(rightChar, 0) + 1);
 ​
-    while r < len(s):
+            if (dicT.containsKey(rightChar)) {
+                if (dicT.get(rightChar).intValue() == window.get(rightChar).intValue()) {
+                    formed++;
+                }
+            }
 ​
-        # Add one character from the right to the window
-        character = s[r]
-        window_counts[character] = window_counts.get(character, 0) + 1
+            while (formed == tMapSize && left <= right) { // contraction
+                char leftChar = s.charAt(left);
+                int windowSize = right - left + 1;
 ​
-        # If the frequency of the current character added equals to the desired count in t then increment the formed count by 1.
-        if character in dict_t and window_counts[character] == dict_t[character]:
-            formed += 1
+                if (windowSize < min) {
+                    min = windowSize;
+                    result = s.substring(left, right + 1);
+                }
 ​
-        # Try and contract the window till the point where it ceases to be 'desirable'.
-        while l <= r and formed == required:
-            character = s[l]
+                window.put(leftChar, window.get(leftChar) - 1);
 ​
-            # Save the smallest window until now.
-            if r - l + 1 < ans[0]:
-                ans = (r - l + 1, l, r)
+                boolean isLeftCharRequire = dicT.containsKey(leftChar);
+                if (isLeftCharRequire) {
+                    if (window.get(leftChar).intValue() < dicT.get(leftChar).intValue()) {
+                        formed--;
+                    }
+                }
 ​
-            # The character at the position pointed by the `left` pointer is no longer a part of the window.
-            window_counts[character] -= 1
-            if character in dict_t and window_counts[character] < dict_t[character]:
-                formed -= 1
+                left++;
+            }
 ​
-            # Move the left pointer ahead, this would help to look for a new window.
-            l += 1    
+            right++;
+        }
 ​
-        # Keep expanding the window once we are done contracting.
-        r += 1    
-    return "" if ans[0] == float("inf") else s[ans[1] : ans[2] + 1]
+        return result;
+    }
+}
