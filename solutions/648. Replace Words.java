@@ -85,3 +85,42 @@ class Solution {
         curr.word = word;
     }
 }
+
+
+// more concise
+class Solution {
+    class Trie{
+        Trie[] children = new Trie[26];
+        boolean isWord;
+        String word;
+    }
+    
+    void add(Trie root, String word){
+        for(char c: word.toCharArray()){
+            int i = c - 'a';
+            if(root.children[i] == null) root.children[i] = new Trie();
+            root = root.children[i];
+        }
+        root.isWord = true;
+        root.word = word;
+    }
+    
+    String find(Trie root, String orgWord){
+        for(char c: orgWord.toCharArray()){
+            int i = c - 'a';
+            if(root != null && root.isWord) return root.word;
+            else if(root.children[i] != null) root = root.children[i];
+            else break;
+        }
+        return orgWord;
+    }
+    public String replaceWords(List<String> dictionary, String sentence) {
+        Trie root = new Trie();
+        for(String word: dictionary) add(root, word);
+        StringBuilder ans = new StringBuilder();
+        for(String word: sentence.split(" ")){
+            ans.append(" " + find(root, word));
+        }
+        return ans.toString().trim();
+    }
+}
