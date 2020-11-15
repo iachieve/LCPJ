@@ -18,52 +18,70 @@ class Solution {
     }
 }
 
-
+Runtime: 5 ms, faster than 99.90% of Java online submissions for Replace Words.
+Memory Usage: 50.9 MB, less than 42.47% of Java online submissions for Replace Words.
 class Solution {
-    static class TrieNode {
-        TrieNode[] next;
+    /*
+    Main idea is split given sentence into words. 
+        Now for each word find if we can find a word in Trie tree with prefix string of any length otherwise just return original string.
+    See below comments further.
+    */
+    public String replaceWords(List<String> dictionary, String sentence) 
+    {
+        root = new Trie();
+        for(String word:dictionary)
+            add(root,word);
+        String[] words = sentence.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for(int i=0;i<words.length;i++)
+        {
+            String sub = find(root,words[i]);
+            if(i!=0)
+                sb.append(" ");
+            sb.append(sub);
+        }
+        return sb.toString();
+    }
+    
+    String find(Trie node, String originalWord)
+    {
+        for(int i=0;i<originalWord.length();i++)
+        {
+            char ch = originalWord.charAt(i);
+            int j = ch - 'a';
+            if(node!=null && node.isWord)//We got prefix string as a word in dictionary then return it.
+                return node.word;
+            if(node.childs[j] != null)
+                node = node.childs[j];
+            else
+                break;//we don't see any further words in dictionary, and the prefix stirng originalWord.substring(0,j+1) is not dictionary word. so break it. return original word.
+        }
+        return originalWord;//If we could not find prefix word from dictionary, then return original word.
+    }
+    
+    Trie root;
+    class Trie
+    {
+        Trie[] childs;
         boolean isWord;
         String word;
-        TrieNode() {
-            this.next = new TrieNode[26];
-            this.isWord = false;
+        
+        Trie(){
+            childs = new Trie[26];
         }
     }
-    static class Trie {
-        TrieNode root;
-        Trie() {
-            this.root = new TrieNode();
+    //Trie tree construction with dictionary words.
+    void add(Trie root, String word)
+    {
+        Trie curr = root;
+        for(char c:word.toCharArray())
+        {
+            int i = c - 'a';
+            if(curr.childs[i]==null)
+                curr.childs[i] = new Trie();
+            curr = curr.childs[i];
         }
-        public void addWord(String word) {
-            TrieNode cur = root;
-            for (char ch : word.toCharArray()) {
-                if (cur.next[ch-'a'] == null) cur.next[ch-'a'] = new TrieNode();
-                cur = cur.next[ch-'a'];
-            }
-            cur.isWord = true;
-            cur.word = word;
-        }
-    }
-    public String findPrefix(Trie trie, String word) {
-        TrieNode cur = trie.root;
-        for (char ch : word.toCharArray()) {
-            if (cur.isWord) return cur.word; // to return the shortest prefix
-            if (cur.next[ch-'a'] == null) return ""; // no prefix possible
-            cur = cur.next[ch-'a'];
-        }
-        return ""; //traversed the entire word but no prefix was found 
-		//(essentially the word became the prefix of the word in the dictionary)
-    }
-    public String replaceWords(List<String> dict, String sentence) {
-        List<String> result = new ArrayList<>();
-        Trie trie = new Trie();
-        String[] words = sentence.split(" ");
-        for (String word : dict) trie.addWord(word);
-        for (String word : words) {
-            String res = findPrefix(trie, word);
-            if (res.length() == 0) result.add(word);
-            else result.add(res);
-        }
-        return String.join(" ", result);
+        curr.isWord=true;
+        curr.word = word;
     }
 }
