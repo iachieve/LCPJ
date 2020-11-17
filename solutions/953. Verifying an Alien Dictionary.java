@@ -1,4 +1,32 @@
 class Solution {
+public boolean isAlienSorted(String[] words, String order) {
+        if (words.length < 2) {
+            return true;
+        }       
+        for (int i = 1; i < words.length; i++) {
+            if (!isOrderValid(words[i - 1], words[i], order)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    private boolean isOrderValid(String word1, String word2, String order) {
+        for (int i = 0; i < word1.length() && i < word2.length(); i++) {
+            int ch1 = word1.charAt(i);
+            int ch2 = word2.charAt(i);
+            if (order.indexOf(ch1) != order.indexOf(ch2)) {
+                return order.indexOf(ch1) < order.indexOf(ch2);
+            }
+        }
+        return word1.length() <= word2.length();
+    } 
+}
+
+
+
+
+class Solution {
     public boolean isAlienSorted(String[] words, String order) {
         int[] charMap = new int[26];
         for(int i = 0; i < order.length(); i++) charMap[order.charAt(i) - 'a'] = i;
