@@ -1,53 +1,56 @@
-class Solution {
-    public void sortColors(int[] nums) {
-        // bubble sort
-        // Runtime: 2 ms, faster than 9.27% of Java online submissions for Sort Colors.
-        // Memory Usage: 37.7 MB, less than 33.18% of Java online submissions for Sort Colors.
-        // for(int i = 0; i < nums.length; i++){
-        //     for(int j = 0; j < nums.length - 1 - i; j++){
-        //         if(nums[j] >= nums[j+1]){
-        //             int temp = nums[j];
-        //             nums[j] = nums[j+1];
-        //             nums[j+1] = temp;
-        //         }
-        //     }
-        // }
-        
-        // insertion sort
-        // Runtime: 0 ms, faster than 100.00% of Java online submissions for Sort Colors.
-        // Memory Usage: 37.7 MB, less than 44.77% of Java online submissions for Sort Colors.
-        // for(int i = 1; i < nums.length; i++){
-        //     int k = nums[i];
-        //     int j = i - 1;
-        //     while(j >= 0 && k < nums[j]){
-        //         int temp = nums[j+1];
-        //         nums[j+1] = nums[j];
-        //         nums[j] = temp;
+        //         swap(j, j+1, nums);
         //         j--;
         //     }
         // }
         
         // selection sort
-        // Runtime: 1 ms, faster than 9.27% of Java online submissions for Sort Colors.
-        // Memory Usage: 37.9 MB, less than 17.57% of Java online submissions for Sort Colors.
-        for(int i = 0; i < nums.length; i++){
-            int minVal = nums[i];
-            int minIdx = i;
-            for(int j = i; j < nums.length; j++){
-                if(nums[j] < minVal){
-                    minVal = nums[j];
-                    minIdx = j;
-                }
-            }
-            if(minVal < nums[i]){
-                int temp = nums[i];
-                nums[i] = nums[minIdx];
-                nums[minIdx] = temp;
-            }
-        }
+        // for(int i = 0; i < nums.length; i++){
+        //     int minVal = nums[i];
+        //     int minIdx = i;
+        //     for(int j = i ; j < nums.length; j++){
+        //         if(nums[j] < minVal){
+        //             minIdx = j;
+        //             minVal = nums[j];
+        //         }
+        //     }
+        //     if(minVal < nums[i]){
+        //         swap(minIdx, i, nums);
+        //     }
+        // }
         
+        // merge Sort
+        // Runtime: 0 ms, faster than 100.00% of Java online submissions for Sort Colors.
+        // Memory Usage: 38 MB, less than 13.47% of Java online submissions for Sort Colors.
+        mergeSort(nums);
     }
+    private void mergeSort (int[] nums) {
+        int len = nums.length, mid = len / 2;
+         if (len < 2) { return; }
+        int[] left = new int[mid], right = new int[len - mid];
+        for(int i = 0; i < mid; i++) left[i] = nums[i];
+        for(int i = mid; i < len; i++) right[i - mid] = nums[i];
+        mergeSort(left);
+        mergeSort(right);
+        merge(nums, left, right);
+    }
+    
+    private void merge (int[] nums, int[] left, int[] right) {
+        int i = 0, j = 0, k = 0;
+        while(i < left.length && j < right.length){
+            if(left[i] <= right[j]) nums[k++] = left[i++];
+            else nums[k++] = right[j++];
+        }
+        while(i < left.length) nums[k++] = left[i++];
+        while(j < right.length) nums[k++] = right[j++];
+    }
+    
 }
+​
+​
+​
+​
+​
+​
 ​
 ​
 ​
