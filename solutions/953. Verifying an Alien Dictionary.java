@@ -6,7 +6,7 @@ class Solution {
             if(compare(words[i-1], words[i], charMap) > 0) return false;
         }
         return true;
-    }
+    }
     private int compare(String word1, String word2, int[] charMap){
         int i = 0, j = 0, res = 0;
         while(i < word1.length() && j < word2.length() && res == 0){
