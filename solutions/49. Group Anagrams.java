@@ -1,4 +1,6 @@
 class Solution {
+ // TC: O(NK log K)
+ // SC: O(N K)
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> anagrams = new HashMap<>();
         for(String word : strs){
@@ -7,7 +9,7 @@ class Solution {
             String sortedWord = new String(chars);
             
             anagrams.computeIfAbsent(sortedWord, k -> new ArrayList<>()).add(word);
-​
+
             // List<String> anagramList = anagrams.getOrDefault(sortedWord, new ArrayList<String>());
             // anagramList.add(word);            
             // anagrams.put(sortedWord, anagramList);
