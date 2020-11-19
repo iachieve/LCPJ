@@ -2,6 +2,13 @@
 Runtime: 6 ms, faster than 47.68% of Java online submissions for Merge Intervals.
 Memory Usage: 41.9 MB, less than 29.17% of Java online submissions for Merge Intervals.
  
+	[[1,3],[2,6],[8,10],[15,18]]
+    	compare 3 vs 2
+        3 is > 2
+        so then we need the greatest of 3 vs 6
+        res: [1, 6]
+	
+
 class Solution {
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
