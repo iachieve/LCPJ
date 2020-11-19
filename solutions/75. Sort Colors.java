@@ -66,3 +66,66 @@ class Solution {
 
     
 }
+
+
+
+// Heap Sort
+// Runtime: 0 ms, faster than 100.00% of Java online submissions for Sort Colors.
+// Memory Usage: 37.8 MB, less than 29.58% of Java online submissions for Sort Colors.
+    
+class Solution {
+    public void sortColors(int[] nums) {
+        buildMaxHeap(nums);
+        for(int endIdx = nums.length - 1; endIdx >= 0; endIdx--){
+            swap(0, endIdx, nums);
+            siftDown(0, endIdx - 1, nums);
+        }
+    }
+    
+    private void buildMaxHeap(int[] nums){
+        int firstParentIdx = (nums.length - 2) / 2;
+        for(int currentIdx = firstParentIdx; currentIdx >= 0; currentIdx--){
+            siftDown(currentIdx, nums.length - 1, nums);
+        }
+    }
+    
+    private void siftDown(int currentIdx, int endIdx, int[] nums){
+        int firstChildIdx = currentIdx * 2 + 1;
+        while(firstChildIdx <= endIdx){
+            int secondChildIdx = currentIdx*2+2 <= endIdx ? currentIdx*2+2 : -1;
+            int idxToSwap;
+            if(secondChildIdx != -1 && nums[secondChildIdx] > nums[firstChildIdx]){
+                idxToSwap = secondChildIdx;
+            }else{
+                idxToSwap = firstChildIdx;
+            }
+            
+            if(nums[idxToSwap] > nums[currentIdx]){
+                swap(idxToSwap, currentIdx, nums);
+                currentIdx = idxToSwap;
+                firstChildIdx = currentIdx * 2 + 1;
+            }else{
+                return;
+            }
+            
+        }
+    }
+    
+    
+    
+        
+    private void swap(int i, int j, int[] nums){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+
+
+
+
+
+
+
+
+
