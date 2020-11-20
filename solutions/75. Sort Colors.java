@@ -178,3 +178,35 @@ class Solution {
 
 
 
+
+class Solution {
+    public void sortColors(int[] nums) {
+        quickSort(nums, 0, nums.length - 1);
+    }
+    
+    private void quickSort(int[] nums, int left, int right) {
+        if (left >= right) return;
+        int pivot = partition(nums, left, right);
+        quickSort(nums, left, pivot-1);
+        quickSort(nums, pivot, right);
+    }
+    private int partition(int[] nums, int left, int right) {
+        int mid = (left + right) / 2;
+        int pivotNum = nums[mid];
+        while (left <= right) {
+            while (nums[left] < pivotNum) left++;
+            while (nums[right] > pivotNum) right--;
+            if (left <= right) {
+                swap(nums, left, right);
+                left++;
+                right--;
+            }     
+        }
+        return left;
+    }
+    private void swap(int[] nums, int left, int right) {
+        int temp = nums[right];
+        nums[right] = nums[left];
+        nums[left] = temp;
+    }
+}
