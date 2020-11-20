@@ -7,10 +7,10 @@ public interface IMinHeap {
     int peek();
 
     // 5 l
-    void siftUp(int currIdx, List<Integer> heap);
+    void siftUp(int currentIndex, List<Integer> heap);
 
     // 15 l
-    void siftDown(int currIdx, int endIdx, List<Integer> heap);
+    void siftDown(int currentIndex, int endIndex, List<Integer> heap);
 
     // 5 l
     int remove();

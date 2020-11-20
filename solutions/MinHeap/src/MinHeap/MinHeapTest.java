@@ -8,7 +8,9 @@ public class MinHeapTest {
     public static void main(String[] args) {
         List<Integer> array =
                 new ArrayList<>(Arrays.asList(48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41));
-        MinHeap minHeap = new MinHeap(array);
+//        MinHeap minHeap = new MinHeap(array);
+        Practice minHeap = new Practice(array);
+
         minHeap.insert(76);
         System.out.println(isMinHeapPropertySatisfied(minHeap.heap));
         System.out.println(minHeap.peek() == -5);
@@ -21,6 +23,7 @@ public class MinHeapTest {
         minHeap.insert(87);
         System.out.println(isMinHeapPropertySatisfied(minHeap.heap));
     }
+
     static boolean isMinHeapPropertySatisfied(List<Integer> array) {
         for (int currentIdx = 1; currentIdx < array.size(); currentIdx++) {
             int parentIdx = (currentIdx - 1) / 2;
