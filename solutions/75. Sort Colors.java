@@ -127,5 +127,54 @@ class Solution {
 
 
 
+class Solution {
+    public void sortColors(int[] nums) {
+        quicksort(nums, 0, nums.length - 1);
+    }
+    
+  private void quicksort(int[] nums, int left, int right) {
+    if (left < right) {
+      int pivotFinalRestingPosition = partition(nums, left, right);
+
+      quicksort(nums, left, pivotFinalRestingPosition - 1);
+      quicksort(nums, pivotFinalRestingPosition + 1, right);
+    }
+  }
+
+  /*
+   * The partition function that chooses a pivot, partitions the array around the
+   * pivot, places the pivot value where it belongs, and then returns the index of
+   * where the pivot finally lies
+   */
+  private int partition(int[] arr, int left, int right) {
+    int pivot = arr[right];
+
+    /*
+     * i will keep track of the "tail" of the section of items less than the pivot
+     * so that at the end we can "sandwich" the pivot between the section less than
+     * it and the section greater than it
+     */
+    int i = left - 1;
+
+    for (int j = left; j < right; j++) {
+      if (arr[j] <= pivot) {
+        i++;
+
+        swap(arr, i, j);
+      }
+    }
+
+    swap(arr, i + 1, right);
+
+    return i + 1; // Return the pivot's final resting position
+  }
+
+  private void swap(int[] arr, int first, int second) {
+    int temp = arr[first];
+    arr[first] = arr[second];
+    arr[second] = temp;
+  }
+}
+
 
 
