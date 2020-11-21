@@ -1,40 +1,22 @@
 class Solution {
-    
-    private String getLetters(char ch) {
-        return switch (ch) {
-            case '2' -> "abc";
-            case '3' -> "def";
-            case '4' -> "ghi";
-            case '5' -> "jkl";
-            case '6' -> "mno";
-            case '7' -> "pqrs";
-            case '8' -> "tuv";
-            case '9' -> "wxyz";
-            default -> "";
-        };
+    private static final String[] MAPPING = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    public List<String> letterCombinations(String digits) {
+        List<String> res = new ArrayList<>();
+        if(digits == null || digits.length() == 0) return res;
+        backtrack(digits, 0, new StringBuilder(), res);
+        return res;
     }
     
-    public List<String> letterCombinations(String digits) {
-        List<String> ans = new ArrayList<>();
-        if (digits.length() == 0) return ans;
-        backtrack(digits, 0, new StringBuilder(), ans);
-        return ans;
-    }
-​
-     private void backtrack(String digits, int start, StringBuilder cur, List<String> ans) {
-        if (cur.length() == digits.length()) {
-            ans.add(cur.toString());
+    private void backtrack(String digits, int idx, StringBuilder combination, List<String> res){
+        if(idx == digits.length()){
+            res.add(combination.toString());
             return;
         }
-​
-        for (int i = start; i < digits.length(); i++) {
-            String letters = getLetters(digits.charAt(i));
-​
-            for (int j = 0; j < letters.length(); j++) {
-                cur.append(letters.charAt(j));
-                backtrack(digits, i + 1, cur, ans);
-                cur.deleteCharAt(cur.length() - 1);
-            }
+        
+        String letters = MAPPING[digits.charAt(idx) - '0'];
+        for(char letter: letters.toCharArray()){
+            backtrack(digits, idx + 1, combination.append(letter), res);
+            combination.deleteCharAt(combination.length() - 1);
         }
     }
 }
