@@ -1,22 +1,31 @@
 class Solution {
     private static final String[] MAPPING = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-    public List<String> letterCombinations(String digits) {
+    
+  public List<String> letterCombinations(String digits) {
         List<String> res = new ArrayList<>();
-        if(digits == null || digits.length() == 0) return res;
-        backtrack(digits, 0, new StringBuilder(), res);
+        if (digits.length() == 0) return res;
+        exploreCombinations(0, new StringBuilder(), digits, res);
         return res;
     }
     
-    private void backtrack(String digits, int idx, StringBuilder combination, List<String> res){
-        if(idx == digits.length()){
-            res.add(combination.toString());
+    private void exploreCombinations(int currIdx, StringBuilder partial, String digits, List<String> res) {
+        if (currIdx == digits.length()) {
+            res.add(partial.toString());
             return;
         }
-        
-        String letters = MAPPING[digits.charAt(idx) - '0'];
-        for(char letter: letters.toCharArray()){
-            backtrack(digits, idx + 1, combination.append(letter), res);
-            combination.deleteCharAt(combination.length() - 1);
+​
+        String letters = MAPPING[digits.charAt(currIdx) - '0'];
+​
+        for (char possibleLetter: letters.toCharArray()) {
+            // 1.) Choose - Append the letter that this digit can materialize into
+            partial.append(possibleLetter);
+​
+            // 2.) Explore - Recurse on the decision with changed state. We advance the digit we are working on.
+            exploreCombinations(currIdx + 1, partial, digits, res);
+​
+            // 3.) Unchoose - We have returned to this stack frame of choice. Remove the choice, next loop will choose again.
+            partial.deleteCharAt(partial.length() - 1);
         }
     }
+​
 }
