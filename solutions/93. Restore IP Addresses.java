@@ -14,8 +14,7 @@ class Solution {
             return;
         }
         
-        // Find split point
-        for(int i = 1; i <= 3; i++) {
+        for(int i = 1; i <= 3; i++) {// Find split point
             if(start + i > s.length()) break;
             
             String str = s.substring(start, start + i);
@@ -34,5 +33,5 @@ class Solution {
         if(s.length() > 1 && s.startsWith("0")) return false;
         int n = Integer.valueOf(s);
         return n <= 255;
-    }
+    }
 }
