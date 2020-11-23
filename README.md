@@ -26,6 +26,7 @@
 |75|[ Sort Colors](https://leetcode.com/problems/sort-colors/)|[Java](./solutions/75.%20Sort%20Colors.java)|0 ms|
 |76|[ Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)|[Java](./solutions/76.%20Minimum%20Window%20Substring.java)|14 ms|
 |92|[ Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)|[Java](./solutions/92.%20Reverse%20Linked%20List%20II.java)|0 ms|
+|93|[ Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)|[Java](./solutions/93.%20Restore%20IP%20Addresses.java)|2 ms|
 |94|[ Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)|[Java](./solutions/94.%20Binary%20Tree%20Inorder%20Traversal.java)|0 ms|
 |98|[ Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)|[Java](./solutions/98.%20Validate%20Binary%20Search%20Tree.java)|1 ms|
 |101|[ Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)|[Java](./solutions/101.%20Symmetric%20Tree.java)|1 ms|
