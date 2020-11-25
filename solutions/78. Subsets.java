@@ -1,18 +1,21 @@
+// backtracking solution
 class Solution {
-  public List<List<Integer>> subsets(int[] nums) {
-    List<List<Integer>> output = new ArrayList();
-    output.add(new ArrayList<Integer>());
-    for (int num : nums) {
-      List<List<Integer>> newSubsets = new ArrayList();
-      for (List<Integer> curr : output) {
-        newSubsets.add(new ArrayList<Integer>(curr){{add(num);}});
-      }
-      for (List<Integer> curr : newSubsets) {
-        output.add(curr);
-      }
-    }
-    return output;
-  }
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        generatePowerset(0, new ArrayList<>(), nums, res);
+        return res;
+    }
+     private void generatePowerset(int currIdx, List<Integer> selectedSoFar, int[] nums, List<List<Integer>> res) {
+        if (currIdx == nums.length) {
+            res.add(new ArrayList<>(selectedSoFar));
+            return;
+        }
+
+        selectedSoFar.add(nums[currIdx]);
+        generatePowerset(currIdx + 1, selectedSoFar, nums, res);
+        selectedSoFar.remove(selectedSoFar.size() - 1);
+        generatePowerset(currIdx + 1, selectedSoFar, nums, res);
+    }
 }
 
 
