@@ -31,3 +31,29 @@ class Solution {
         }
         return res;
     }
+
+
+
+// another recursion approach
+class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        return powerset(nums, nums.length - 1);
+    }
+    
+    public List<List<Integer>> powerset(int[] nums, int idx){
+        if(idx < 0){
+            List<List<Integer>> emptySet = new ArrayList<>();
+            emptySet.add(new ArrayList<>());
+            return emptySet;
+        }
+        int ele = nums[idx];
+        List<List<Integer>> res = powerset(nums, idx - 1);
+        int len = res.size();
+        for(int i = 0; i < len; i++){
+            List<Integer> tempSet = new ArrayList<>(res.get(i));
+            tempSet.add(ele);
+            res.add(tempSet);
+        }
+        return res;
+    }
+}
