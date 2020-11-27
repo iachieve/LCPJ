@@ -82,7 +82,7 @@
 |560|[ Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)|[Java](./solutions/560.%20Subarray%20Sum%20Equals%20K.java)|12 ms|
 |622|[ Design Circular Queue](https://leetcode.com/problems/design-circular-queue/)|[Java](./solutions/622.%20Design%20Circular%20Queue.java)|4 ms|
 |648|[ Replace Words](https://leetcode.com/problems/replace-words/)|[Java](./solutions/648.%20Replace%20Words.java)|5 ms|
-|694|[ Number of Distinct Islands](https://leetcode.com/problems/number-of-distinct-islands/)|[Java](./solutions/694.%20Number%20of%20Distinct%20Islands.java)|5 ms|
+|694|[ Number of Distinct Islands](https://leetcode.com/problems/number-of-distinct-islands/)|[Java](./solutions/694.%20Number%20of%20Distinct%20Islands.java)|9 ms|
 |701|[ Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/)|[Java](./solutions/701.%20Insert%20into%20a%20Binary%20Search%20Tree.java)|0 ms|
 |707|[ Design Linked List](https://leetcode.com/problems/design-linked-list/)|[Java](./solutions/707.%20Design%20Linked%20List.java)|6 ms|
 |867|[ Transpose Matrix](https://leetcode.com/problems/transpose-matrix/)|[Java](./solutions/867.%20Transpose%20Matrix.java)|0 ms|
