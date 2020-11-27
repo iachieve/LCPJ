@@ -1,35 +1,30 @@
 class Solution {
-    public int numDistinctIslands(int[][] grid) {
+   
+    public  int numDistinctIslands(int[][] grid) {
         Set<String> set = new HashSet();
-        int m = grid.length, n = grid[0].length;
-        int count = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        int rowCount = grid.length, colCount = grid[0].length;
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
                 if (grid[i][j] == 1) {
                     StringBuilder sb = new StringBuilder();
-                    dfs(grid, m, n, i, j, "s", sb); // start
-                    String island = sb.toString();
-                    if (!set.contains(island)) set.add(island);
+                    dfs(grid, rowCount, colCount, i, j, "s", sb); // start
+                    set.add(sb.toString());
                 }
             }
         }
         return set.size();
     }
-    
-    private void dfs(int[][] grid, int m, int n, int i, int j, String dire, StringBuilder sb) {
-        if (!isValid(m, n, i, j) || grid[i][j] != 1) return;
+​
+    private  void dfs(int[][] grid, int rowCount, int colCount, int i, int j, String dir, StringBuilder sb) {
+        if (i < 0 || i >= rowCount || j < 0 || j >= colCount || grid[i][j] == 0) return;
 ​
         grid[i][j] = 0;
-        sb.append(dire);
-        
-        dfs(grid, m, n, i + 1, j, "d", sb); // down
-        dfs(grid, m, n, i, j + 1, "r", sb); // right
-        dfs(grid, m, n, i - 1, j, "u", sb); // up
-        dfs(grid, m, n, i, j - 1, "l", sb); // left
+        sb.append(dir);
+​
+        dfs(grid, rowCount, colCount, i + 1, j, "d", sb); // down
+        dfs(grid, rowCount, colCount, i, j + 1, "r", sb); // right
+        dfs(grid, rowCount, colCount, i - 1, j, "u", sb); // up
+        dfs(grid, rowCount, colCount, i, j - 1, "l", sb); // left
         sb.append("e"); // end
-    }
-    
-    private boolean isValid(int m, int n, int x, int y) {
-        return x >= 0 && x < m && y >= 0 && y < n;
     }
 }
