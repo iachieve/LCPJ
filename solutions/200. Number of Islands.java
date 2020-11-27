@@ -1,3 +1,4 @@
+// dfs
 class Solution {
     public int numIslands(char[][] grid) {
         if(grid == null || grid.length == 0) return 0;
