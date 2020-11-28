@@ -88,6 +88,7 @@
 |707|[ Design Linked List](https://leetcode.com/problems/design-linked-list/)|[Java](./solutions/707.%20Design%20Linked%20List.java)|6 ms|
 |867|[ Transpose Matrix](https://leetcode.com/problems/transpose-matrix/)|[Java](./solutions/867.%20Transpose%20Matrix.java)|0 ms|
 |868|[ Binary Gap](https://leetcode.com/problems/binary-gap/)|[Java](./solutions/868.%20Binary%20Gap.java)|1 ms|
+|876|[ Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)|[Java](./solutions/876.%20Middle%20of%20the%20Linked%20List.java)|0 ms|
 |916|[ Word Subsets](https://leetcode.com/problems/word-subsets/)|[Java](./solutions/916.%20Word%20Subsets.java)|14 ms|
 |921|[ Minimum Add to Make Parentheses Valid](https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/)|[Java](./solutions/921.%20Minimum%20Add%20to%20Make%20Parentheses%20Valid.java)|1 ms|
 |953|[ Verifying an Alien Dictionary](https://leetcode.com/problems/verifying-an-alien-dictionary/)|[Java](./solutions/953.%20Verifying%20an%20Alien%20Dictionary.java)|0 ms|
