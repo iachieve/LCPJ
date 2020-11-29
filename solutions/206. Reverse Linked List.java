@@ -21,6 +21,13 @@ class Solution {
         head.next = null;
         return temp;
     }
+    
+    if(head== null || head.next == null) return head;
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+        
  
     // save next listnode
     // reverse current node prev
