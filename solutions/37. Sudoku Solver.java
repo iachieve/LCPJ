@@ -7,9 +7,9 @@ class Solution {
         for (int r = 0; r < 9; r++) {
             for (int c = 0; c < 9; c++) {
                 if (board[r][c] != '.') continue;
-                for (char number = '1'; number <= '9'; number++) {
-                    if (isValid(board, r, c, number)) {
-                        board[r][c] = number;
+                for (char num = '1'; num <= '9'; num++) {
+                    if (isValid(board, r, c, num)) {
+                        board[r][c] = num;
                         if (solve(board)) return true;
                         else board[r][c] = '.';
                     }
@@ -18,7 +18,7 @@ class Solution {
             }
         }
         return true;
-    }
+    }
 ​
     private boolean isValid(char[][] board, int row, int col, char val) {
         for (int i = 0; i < 9; i++)
