@@ -33,8 +33,8 @@ class Solution {
         for (int i = 0; i < 9; i++)
             if(board[i][col] == val || board[row][i] == val) return false;
 ​
-        int topLeftRow = 3 * (row / 3);
-        int topLeftCol = 3 * (col / 3);
+        int topLeftRow = row - row % 3;
+        int topLeftCol = col - col % 3;
 ​
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
