@@ -82,7 +82,29 @@ public class Solution {
 }
 
 
+//=======================================================================
 
+// Time complexity : O(m+n).
+// Space complexity : O(1).
+    
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+       ListNode aPntr = headA, bPntr = headB;
+        while(aPntr != bPntr){
+           
+            if(aPntr == null) 
+                aPntr = headB;
+            else aPntr = aPntr.next;
+            
+            if(bPntr == null)
+                bPntr = headA;
+            else bPntr = bPntr.next;
+            
+        }
+        
+        return aPntr;
+    }
+}
 
 
 
