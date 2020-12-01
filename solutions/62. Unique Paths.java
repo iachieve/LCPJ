@@ -11,7 +11,7 @@ class Solution {
               
         d[row][col] = d[row - 1][col] + d[row][col - 1];
       }
-    }
+    }
     return d[m - 1][n - 1];
   }
 }
