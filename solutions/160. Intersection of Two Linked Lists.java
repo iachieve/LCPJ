@@ -59,3 +59,32 @@ public class Solution {
     return length;
   }
 }
+
+
+//======================================================
+
+// Time complexity : O(m+n).
+// Space complexity : O(m) or O(n).
+    
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        Set<ListNode> visited = new HashSet<>();
+        while(headA != null){
+            visited.add(headA);
+            headA = headA.next;
+        }
+        while(headB != null){
+            if(visited.contains(headB)) return headB;
+            headB = headB.next;
+        }
+        return null;
+    }
+}
+
+
+
+
+
+
+
+
