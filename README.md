@@ -23,6 +23,7 @@
 |54|[ Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)|[Java](./solutions/54.%20Spiral%20Matrix.java)|0 ms|
 |56|[ Merge Intervals](https://leetcode.com/problems/merge-intervals/)|[Java](./solutions/56.%20Merge%20Intervals.java)|6 ms|
 |61|[ Rotate List](https://leetcode.com/problems/rotate-list/)|[Java](./solutions/61.%20Rotate%20List.java)||
+|62|[ Unique Paths](https://leetcode.com/problems/unique-paths/)|[Java](./solutions/62.%20Unique%20Paths.java)|0 ms|
 |67|[ Add Binary](https://leetcode.com/problems/add-binary/)|[Java](./solutions/67.%20Add%20Binary.java)|2 ms|
 |69|[ Sqrt(x)](https://leetcode.com/problems/sqrtx/)|[Java](./solutions/69.%20Sqrt(x).java)|1 ms|
 |71|[ Simplify Path](https://leetcode.com/problems/simplify-path/)|[Java](./solutions/71.%20Simplify%20Path.java)|43 ms|
