@@ -23,3 +23,27 @@ class Solution {
         return res;
     }
 }
+
+
+/*
+Space Complexity: O(N), Time Complexity: O(1)
+Runtime: 1 ms, faster than 100.00% of Java online submissions for Product of Array Except Self.
+Memory Usage: 49.6 MB, less than 63.69% of Java online submissions for Product of Array Except Self.
+*/
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int length = nums.length;
+        int[] res = new int[length];
+        res[0] = 1;
+        for (int i = 1; i < length; i++) {
+            res[i] = nums[i - 1] * res[i - 1];
+        }
+        int right = 1;
+        for (int i = length - 1; i >= 0; i--) {
+            res[i] = res[i] * right;
+            right *= nums[i];
+        }
+
+        return res;
+    }
+}
