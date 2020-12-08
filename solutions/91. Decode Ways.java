@@ -1,14 +1,37 @@
-class Solution {
-    public int numDecodings(String s) {
-        if(s == null || s.length() == 0) return 0;
-        int[] dp = new int[s.length() + 1];
-        dp[0] = 1;
-        dp[1] = s.charAt(0) == '0' ? 0 : 1;
-        for (int i = 2; i < dp.length; ++i) {
-            if(s.charAt(i-1) != '0') dp[i] += dp[i-1];
-            int twoDigit = Integer.valueOf(s.substring(i-2, i));
-            if(twoDigit >= 10 && twoDigit <= 26) dp[i] += dp[i-2];
-        }
-        return dp[s.length()];
+        if (decodePointer >= s.length()) {
+            return 1; // "" is a valid decomposition
+        }
+​
+        // Subproblem already solved and has a value
+        if (dp[decodePointer] > -1) {
+            return dp[decodePointer];
+        }
+​
+        int totalDecompositions = 0;
+        for (int i = 1; i <= 2; i++) {
+            if (decodePointer + i <= s.length()) {
+                String snippet = s.substring(decodePointer, decodePointer + i);
+                if (isValid(snippet)) {
+                    totalDecompositions += numDecoding(s, decodePointer + i, dp);
+                }
+            }
+        }
+​
+        // Record subproblem answer to decompositions from (decodePointer)...(s.length - 1)
+        dp[decodePointer] = totalDecompositions;
+​
+        return dp[decodePointer];
+    }
+​
+    private boolean isValid(String s) {
+        if (s.length() == 0 || s.charAt(0) == '0') {
+            return false;
+        }
+​
+        int value = Integer.parseInt(s);
+​
+        return value >= 1 && value <= 26;
     }
 }
+​
+​
