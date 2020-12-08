@@ -34,6 +34,7 @@
 |77|[ Combinations](https://leetcode.com/problems/combinations/)|[Java](./solutions/77.%20Combinations.java)|15 ms|
 |78|[ Subsets](https://leetcode.com/problems/subsets/)|[Java](./solutions/78.%20Subsets.java)|1 ms|
 |86|[ Partition List](https://leetcode.com/problems/partition-list/)|[Java](./solutions/86.%20Partition%20List.java)|0 ms|
+|91|[ Decode Ways](https://leetcode.com/problems/decode-ways/)|[Java](./solutions/91.%20Decode%20Ways.java)|1 ms|
 |92|[ Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/)|[Java](./solutions/92.%20Reverse%20Linked%20List%20II.java)|0 ms|
 |93|[ Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/)|[Java](./solutions/93.%20Restore%20IP%20Addresses.java)|2 ms|
 |94|[ Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)|[Java](./solutions/94.%20Binary%20Tree%20Inorder%20Traversal.java)|0 ms|
