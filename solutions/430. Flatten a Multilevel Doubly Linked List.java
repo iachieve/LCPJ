@@ -102,7 +102,24 @@ class Solution {
     }
 }
 
+        class Solution {
+    public Node flatten(Node head) {
+        if(head == null) return head;
+        dfs(new Node(0, null, head, null), head);
+        head.prev = null;
+        return head;
+    }
+    public Node dfs(Node prev, Node cur) {
+        if(cur == null) return prev;
+        prev.next = cur;
+        cur.prev = prev;
         
+        Node nextPtr = cur.next;
+        Node tail = dfs(cur, cur.child);
+        cur.child = null;
+        return dfs(tail, nextPtr);
+    }
+}
         
         
         
