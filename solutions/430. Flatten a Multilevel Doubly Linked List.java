@@ -36,7 +36,25 @@ class Solution {
 
     
  
-
+class Solution {    // 5
+    public Node flatten(Node head) {
+        if (head == null) return head;
+        Node prev = new Node(0, null, head, null), cur;
+        Deque<Node> stack = new ArrayDeque<>();
+        stack.push(head);
+        while (!stack.isEmpty()) {
+            cur = stack.pop();
+            prev.next = cur;
+            cur.prev = prev;
+            if (cur.next != null) stack.push(cur.next);
+            if (cur.child != null) stack.push(cur.child);
+            cur.child = null;
+            prev = cur;
+        }
+        head.prev = null;
+        return head;
+    }
+}
         
     
     
