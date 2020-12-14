@@ -1,22 +1,21 @@
 class Solution {
     public boolean isValid(String s) {
+        Map<Character, Character> closeToOpenTags = new HashMap<>(){{
+           put(')', '('); 
+            put(']', '[');
+            put('}', '{');
+        }};
         
-        Map<Character, Character> closeToOpenMap = new HashMap<>(){{
-                                        put(')', '(');
-                                        put('}','{');
-                                        put(']','[');
-                                    }};
         Stack<Character> stack = new Stack<>();
         
-        for(char c: s.toCharArray()){
-            if(closeToOpenMap.containsKey(c)){
+        for(char c : s.toCharArray()){
+            if(closeToOpenTags.containsKey(c)){ /// closing tag 
                 if(stack.isEmpty()) return false;
-                char correctOpeningTag = closeToOpenMap.get(c);
-                if(stack.pop() != correctOpeningTag) return false;
-            }else
+                if(stack.pop() != closeToOpenTags.get(c)) return false;
+            }else{
                 stack.push(c);
+            }
         }
         return stack.isEmpty();
     }
 }
-​
