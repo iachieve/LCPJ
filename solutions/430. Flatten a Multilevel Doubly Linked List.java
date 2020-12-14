@@ -83,7 +83,24 @@ class Solution {    // 5
     }
 }
 
-
+class Solution {
+    public Node flatten(Node head) {
+        if(head == null) return head;
+        dfs(new Node(0, null, head, null), head);
+        head.prev = null;
+        return head;
+    }
+    public Node dfs(Node prev, Node cur) {
+        if (cur == null) return prev;
+        cur.prev = prev;
+        prev.next = cur;
+        
+        Node temp = cur.next;
+        Node tail = dfs(cur, cur.child); // left subtree
+        cur.child = null;
+        return dfs(tail, temp); // flatten right sub tree
+    }
+}
 
         
         
