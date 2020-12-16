@@ -1,33 +1,25 @@
 class Solution {
     public String minRemoveToMakeValid(String s) {
-        Stack<Integer> indices = new Stack<>();
-        boolean[] removed = new boolean[s.length()];
-        StringBuilder modified = new StringBuilder();
-​
-        for(int i = 0; i < s.length(); i++){
-            char curr = s.charAt(i);
-            if(curr == '('){
-                indices.push(i);
-            }else if(curr == ')'){
-                if(indices.isEmpty()){
-                    removed[i] = true;
-                }else{
-                    indices.pop();
-                }
+        StringBuilder res = new StringBuilder();
+        int open = 0, balance = 0;
+        for (char c: s.toCharArray()) {
+            if (c == '(') {
+                open++;
+                balance++;
+            }else if (c == ')') {
+                if (balance == 0) continue;
+                balance--;
             }
-        }
-​
-        while(!indices.isEmpty()){
-            removed[indices.peek()] = true;
-            indices.pop();
+            res.append(c);
         }
         
-        for(int i = 0; i < s.length(); i++){
-            if(!removed[i]){
-                modified.append(s.charAt(i));
-            }
+        StringBuilder result = new StringBuilder();
+        int openToKeep = open - balance;
+        for (int i = 0; i < res.length(); ++i) {
+            char c = res.charAt(i);
+            if (c == '(' && --openToKeep < 0) continue;
+            result.append(c);
         }
-        return modified.toString();
+        return result.toString();
     }
-    
 }
