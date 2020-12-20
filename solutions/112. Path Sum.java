@@ -46,3 +46,61 @@ class Solution {
       hasPathSum(node.right, targetSum - node.val);
   }
 }
+
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if (root == null) return false;
+        LinkedList<TreeNode> nodeStack = new LinkedList<>();
+        LinkedList<Integer> sumStack = new LinkedList<>();
+        nodeStack.push(root);
+        sumStack.push(sum - root.val);
+        TreeNode node;
+        int currSum;
+        while ( !nodeStack.isEmpty() ) {
+            node = nodeStack.pollLast();
+            currSum = sumStack.pollLast();
+            if (node.right == null && node.left == null && currSum == 0) return true;
+            
+            if (node.right != null) {
+                nodeStack.add(node.right);
+                sumStack.add(currSum - node.right.val);
+            }
+            
+            if (node.left != null) {
+                nodeStack.add(node.left);
+                sumStack.add(currSum - node.left.val);
+            }
+        }
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
