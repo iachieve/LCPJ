@@ -1,20 +1,16 @@
 class Solution {
-public TreeNode buildTree(int[] inorder, int[] postorder) {
-        Map<Integer, Integer> inOrderMap = new HashMap<>();
-        for (int i = 0; i < inorder.length; i++) inOrderMap.put(inorder[i], i);
-        return buildTree(postorder, inOrderMap, 0, inorder.length-1, postorder.length - 1);
+    public TreeNode buildTree(int[] in, int[] pos) {
+        Map<Integer, Integer> inMap = new HashMap<>();
+        for (int i = 0; i < in.length; i++) inMap.put(in[i], i);
+        return buildTree(pos, inMap, 0, in.length - 1, pos.length - 1);
     }
-​
-    private TreeNode buildTree(int[] postorder, Map<Integer, Integer> inOrderMap, int inStart, int inEnd, int rootIndex) {
+    public TreeNode buildTree(int[] pos, Map<Integer, Integer> inMap, int inStart, int inEnd, int rootIndex) {
         if (inStart > inEnd) return null;
-        TreeNode root = new TreeNode(postorder[rootIndex]);
-        int inOrderMidIndex = inOrderMap.get(postorder[rootIndex]);
-        
-        root.right = buildTree(postorder, inOrderMap, inOrderMidIndex+1, inEnd, rootIndex-1);
-        
-        int rightTreeLength = inEnd - inOrderMidIndex;
-        root.left = buildTree(postorder, inOrderMap, inStart, inOrderMidIndex-1, rootIndex-rightTreeLength-1);
-        
+        TreeNode root = new TreeNode(pos[rootIndex]);
+        int inMid = inMap.get(pos[rootIndex]);
+        root.right = buildTree(pos, inMap, inMid + 1, inEnd, rootIndex - 1);
+        int rightTreeLen = inEnd - inMid;
+        root.left = buildTree(pos, inMap, inStart, inMid - 1, rootIndex - rightTreeLen - 1);
         return root;
     }
 }
