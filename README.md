@@ -84,6 +84,7 @@
 |236|[ Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)|[Java](./solutions/236.%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree.java)|4 ms|
 |238|[ Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)|[Java](./solutions/238.%20Product%20of%20Array%20Except%20Self.java)|1 ms|
 |250|[ Count Univalue Subtrees](https://leetcode.com/problems/count-univalue-subtrees/)|[Java](./solutions/250.%20Count%20Univalue%20Subtrees.java)|0 ms|
+|257|[ Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)|[Java](./solutions/257.%20Binary%20Tree%20Paths.java)|1 ms|
 |268|[ Missing Number](https://leetcode.com/problems/missing-number/)|[Java](./solutions/268.%20Missing%20Number.java)|0 ms|
 |285|[ Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)|[Java](./solutions/285.%20Inorder%20Successor%20in%20BST.java)|1 ms|
 |290|[ Word Pattern](https://leetcode.com/problems/word-pattern/)|[Java](./solutions/290.%20Word%20Pattern.java)|1 ms|
