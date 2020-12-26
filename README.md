@@ -86,7 +86,7 @@
 |250|[ Count Univalue Subtrees](https://leetcode.com/problems/count-univalue-subtrees/)|[Java](./solutions/250.%20Count%20Univalue%20Subtrees.java)|0 ms|
 |257|[ Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)|[Java](./solutions/257.%20Binary%20Tree%20Paths.java)|1 ms|
 |268|[ Missing Number](https://leetcode.com/problems/missing-number/)|[Java](./solutions/268.%20Missing%20Number.java)|0 ms|
-|285|[ Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)|[Java](./solutions/285.%20Inorder%20Successor%20in%20BST.java)|1 ms|
+|285|[ Inorder Successor in BST](https://leetcode.com/problems/inorder-successor-in-bst/)|[Java](./solutions/285.%20Inorder%20Successor%20in%20BST.java)|5 ms|
 |290|[ Word Pattern](https://leetcode.com/problems/word-pattern/)|[Java](./solutions/290.%20Word%20Pattern.java)|1 ms|
 |295|[ Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)|[Java](./solutions/295.%20Find%20Median%20from%20Data%20Stream.java)|43 ms|
 |297|[ Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|[Java](./solutions/297.%20Serialize%20and%20Deserialize%20Binary%20Tree.java)||
