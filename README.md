@@ -68,6 +68,7 @@
 |157|[ Read N Characters Given Read4](https://leetcode.com/problems/read-n-characters-given-read4/)|[Java](./solutions/157.%20Read%20N%20Characters%20Given%20Read4.java)|0 ms|
 |159|[ Longest Substring with At Most Two Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/)|[Java](./solutions/159.%20Longest%20Substring%20with%20At%20Most%20Two%20Distinct%20Characters.java)|9 ms|
 |160|[ Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)|[Java](./solutions/160.%20Intersection%20of%20Two%20Linked%20Lists.java)|1 ms|
+|173|[ Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)|[Java](./solutions/173.%20Binary%20Search%20Tree%20Iterator.java)|15 ms|
 |190|[ Reverse Bits](https://leetcode.com/problems/reverse-bits/)|[Java](./solutions/190.%20Reverse%20Bits.java)|1 ms|
 |191|[ Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)|[Java](./solutions/191.%20Number%20of%201%20Bits.java)|0 ms|
 |200|[ Number of Islands](https://leetcode.com/problems/number-of-islands/)|[Java](./solutions/200.%20Number%20of%20Islands.java)|3 ms|
